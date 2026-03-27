@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Test</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <h2>Typing Test</h2>
+  <div>
+    <button onclick="go('dashboard.html')">Dashboard</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+  <h3>Typing Practice</h3>
+
+  <!-- Time -->
+  <label>Time (seconds)</label>
+  <input id="setTime" type="number" value="60" min="1">
+
+  <!-- Difficulty -->
+  <label>Difficulty</label>
+  <select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+
+  <!-- Mode -->
+  <label>Mode</label>
+  <select id="mode">
+    <option value="sentence">Sentence</option>
+    <option value="paragraph">Paragraph</option>
+  </select>
+
+  <!-- Text -->
+  <p id="text"></p>
+
+  <!-- Input -->
+  <textarea id="input" oninput="checkTyping()" placeholder="Start typing..."></textarea>
+
+  <!-- Buttons -->
+  <div style="display:flex; gap:10px; flex-wrap:wrap">
+    <button onclick="startTest()">▶ Start</button>
+    <button onclick="stopTest()">⏸ Stop</button>
+    <button onclick="resetTest()">🔄 Reset</button>
+  </div>
+
+  <!-- Results -->
+  <p>⏱ Time: <span id="time">0</span>s</p>
+  <p>⚡ WPM: <span id="wpm">0</span></p>
+  <p>🎯 Accuracy: <span id="accuracy">0</span>%</p>
+
+</div>
+
+</div>
+
+<script>
+function go(page){
+  window.location = page;
+}
+</script>
+
+<script src="js/typing.js"></script>
+
+</body>
+</html>
